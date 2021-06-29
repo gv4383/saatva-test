@@ -1,0 +1,22 @@
+.header-container {
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  height: 64px;
+  justify-content: center;
+  width: 100vw;
+}
+
+.header-sub-container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.header-logo {
+  color: #b19780;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+}
