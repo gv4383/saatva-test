@@ -1,3 +1,5 @@
+@import '../../../variables';
+
 .button-container {
   border: none;
   cursor: pointer;
@@ -8,12 +10,18 @@
 }
 
 .normal-button {
-  background-color: #e2c492;
+  background-color: $button-gold;
   color: white;
 }
 
 .select-button {
-  background-color: #a6a19a;
-  border: 1px solid #cccccc;
+  background-color: white;
+  border: 1px solid $border-gray;
+  color: $button-gray;
+}
+
+.select-button-selected {
+  background-color: $button-gray;
+  border: 1px solid $border-gray;
   color: white;
 }

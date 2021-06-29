@@ -1,6 +1,8 @@
+@import '../../variables';
+
 .header-container {
   align-items: center;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid $border-gray;
   display: flex;
   height: 64px;
   justify-content: center;
@@ -17,7 +19,7 @@
 }
 
 .header-logo {
-  color: #b19780;
+  color: $logo-brown;
   font-family: 'Montserrat', sans-serif;
   font-size: 2em;
 }
