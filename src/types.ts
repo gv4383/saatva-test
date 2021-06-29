@@ -1,4 +1,4 @@
-interface Mattress {
+export interface Mattress {
   name: string;
   price: number;
   reviewRating: number;

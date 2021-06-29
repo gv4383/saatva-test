@@ -1,0 +1,19 @@
+.button-container {
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.normal-button {
+  background-color: #e2c492;
+  color: white;
+}
+
+.select-button {
+  background-color: #a6a19a;
+  border: 1px solid #cccccc;
+  color: white;
+}
