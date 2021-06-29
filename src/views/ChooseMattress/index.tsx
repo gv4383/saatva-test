@@ -2,18 +2,19 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import ChooseMattressPresenter from './presenter';
-import { Mattresses } from '../../types';
+import { Mattress } from '../../types';
 
 const ChooseMattress = () => {
-  const [mattresses, setMattresses] = useState([] as Mattresses[]);
+  const [mattresses, setMattresses] = useState([] as Mattress[]);
 
   useEffect(() => {
     axios
       .get('./mattresses.json')
       .then(({ data }) => {
-        const mattressesArr: Mattresses[] = Object.values(data.mattresses);
+        const mattressesArr: Mattress[] = Object.values(data.mattresses);
         setMattresses(mattressesArr);
-      }).catch(err => {
+      })
+      .catch(err => {
         console.log(err.message);
       });
   }, []);
