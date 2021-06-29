@@ -6,7 +6,7 @@ const Header = () => (
   <header className="header-container">
     <div className="header-sub-container">
       <div className="header-logo">saatva</div>
-      <div>cart</div>
+      <div className="header-cart">cart</div>
     </div>
   </header>
 );
