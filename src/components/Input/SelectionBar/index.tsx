@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Button from '../Button';
 
 import './styles.scss';
 
 interface Props {
+  handleMattressSelection: (name: string) => void;
+  selectedMattress: string;
   selections: string[];
 }
 
 const SelectionBar = (props: Props) => {
-  const { selections } = props;
-  const [selectedMattress, setSelectedMattress] = useState('');
-
-  const handleOnClick = (name: string) => {
-    setSelectedMattress(name);
-  };
+  const { handleMattressSelection, selectedMattress, selections } = props;
 
   const renderButtons = () =>
     selections.map((selection: string) => (
@@ -22,7 +19,7 @@ const SelectionBar = (props: Props) => {
         key={selection}
         isSelectButton
         isSelected={selection === selectedMattress}
-        onClick={() => handleOnClick(selection)}
+        onClick={() => handleMattressSelection(selection)}
         text={selection}
       />
     ));

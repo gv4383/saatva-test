@@ -6,6 +6,7 @@ import { Mattress } from '../../types';
 
 const ChooseMattress = () => {
   const [mattresses, setMattresses] = useState([] as Mattress[]);
+  const [selectedMattress, setSelectedMattress] = useState('');
 
   useEffect(() => {
     axios
@@ -19,7 +20,17 @@ const ChooseMattress = () => {
       });
   }, []);
 
-  return <ChooseMattressPresenter mattresses={mattresses} />;
+  const handleMattressSelection = (name: string) => {
+    setSelectedMattress(name);
+  };
+
+  return (
+    <ChooseMattressPresenter
+      handleMattressSelection={handleMattressSelection}
+      mattresses={mattresses}
+      selectedMattress={selectedMattress}
+    />
+  );
 };
 
 export default ChooseMattress;
