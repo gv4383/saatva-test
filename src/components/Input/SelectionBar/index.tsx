@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Button from '../Button';
 
@@ -10,14 +10,21 @@ interface Props {
 
 const SelectionBar = (props: Props) => {
   const { selections } = props;
+  const [selectedMattress, setSelectedMattress] = useState('');
 
-  const handleOnClick = () => {
-    console.log('Click!');
+  const handleOnClick = (name: string) => {
+    setSelectedMattress(name);
   };
 
   const renderButtons = () =>
     selections.map((selection: string) => (
-      <Button key={selection} isSelectButton onClick={handleOnClick} text={selection} />
+      <Button
+        key={selection}
+        isSelectButton
+        isSelected={selection === selectedMattress}
+        onClick={() => handleOnClick(selection)}
+        text={selection}
+      />
     ));
 
   return <div className="selection-bar-container">{renderButtons()}</div>;
