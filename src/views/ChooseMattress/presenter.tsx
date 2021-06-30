@@ -1,27 +1,51 @@
 import React from 'react';
 
-import { Mattress } from '../../types';
+import Button from '../../components/Input/Button';
+import { TEXT } from '../../constants';
 import SelectionBar from '../../components/Input/SelectionBar';
 
 interface Props {
+  getMattressPrice: () => string;
+  getSelectedMattressPicture: () => string;
   handleMattressSelection: (name: string) => void;
-  mattresses: Mattress[];
+  mattressLabel: string;
   selectedMattress: string;
+  selections: string[];
 }
 
 const ChooseMattressPresenter = (props: Props) => {
-  const { handleMattressSelection, mattresses, selectedMattress } = props;
+  const {
+    getMattressPrice,
+    getSelectedMattressPicture,
+    handleMattressSelection,
+    mattressLabel,
+    selectedMattress,
+    selections,
+  } = props;
 
-  const selections = mattresses.map((mattress: Mattress) => mattress.name);
+  const handleOnClick = () => {
+    console.log(`${selectedMattress} Mattress added to cart!`);
+  };
 
   return (
     <div>
-      Choose Your Mattress
-      <SelectionBar
-        handleMattressSelection={handleMattressSelection}
-        selectedMattress={selectedMattress}
-        selections={selections}
-      />
+      <div>
+        <img src={getSelectedMattressPicture()} alt={selectedMattress} />
+      </div>
+      <div>
+        <div>{TEXT.TITLE}</div>
+        <div>{TEXT.SELECT_MATTRESS}</div>
+        <SelectionBar
+          handleMattressSelection={handleMattressSelection}
+          selectedMattress={selectedMattress}
+          selections={selections}
+        />
+        <div>
+          <div>{mattressLabel}</div>
+          <div>{getMattressPrice()}</div>
+        </div>
+        <Button onClick={handleOnClick} text={TEXT.ADD} />
+      </div>
     </div>
   );
 };
