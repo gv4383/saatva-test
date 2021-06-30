@@ -13,9 +13,11 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div>
       <Header cartCount={cartCount} />
-      <ChooseMattress handleAddToCart={handleAddToCart} />
+      <div className="app-container">
+        <ChooseMattress handleAddToCart={handleAddToCart} />
+      </div>
     </div>
   );
 };
