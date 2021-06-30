@@ -12,3 +12,20 @@
 .choose-selection-container {
   width: 45%;
 }
+
+.choose-title {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+.select-text {
+  font-family: 'Questrial', sans-serif;
+  margin-bottom: 8px;
+}
+
+.mattress-price-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

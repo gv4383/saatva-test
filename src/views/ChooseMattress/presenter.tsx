@@ -35,14 +35,14 @@ const ChooseMattressPresenter = (props: Props) => {
         alt={selectedMattress}
       />
       <div className="choose-selection-container">
-        <div>{TEXT.TITLE}</div>
-        <div>{TEXT.SELECT_MATTRESS}</div>
+        <div className="choose-title">{TEXT.TITLE}</div>
+        <div className="select-text">{TEXT.SELECT_MATTRESS}</div>
         <SelectionBar
           handleMattressSelection={handleMattressSelection}
           selectedMattress={selectedMattress}
           selections={selections}
         />
-        <div>
+        <div className="mattress-price-container">
           <div>{mattressLabel}</div>
           <div>{getMattressPrice()}</div>
         </div>
