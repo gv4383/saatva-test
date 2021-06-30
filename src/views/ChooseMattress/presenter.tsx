@@ -32,13 +32,14 @@ const ChooseMattressPresenter = (props: Props) => {
 
   return (
     <div className="choose-container">
+      <div className="choose-title top-title">{TEXT.TITLE}</div>
       <img
-        className="choose-image-container"
+        className="choose-image-container position-cropped-image"
         src={getSelectedMattressPicture()}
         alt={selectedMattress}
       />
       <div className="choose-selection-container">
-        <div className="choose-title">{TEXT.TITLE}</div>
+        <div className="choose-title bottom-title">{TEXT.TITLE}</div>
         <div className="select-text">{TEXT.SELECT_MATTRESS}</div>
         <SelectionBar
           handleMattressSelection={handleMattressSelection}
