@@ -7,6 +7,7 @@ import SelectionBar from '../../components/Input/SelectionBar';
 interface Props {
   getMattressPrice: () => string;
   getSelectedMattressPicture: () => string;
+  handleAddToCart: () => void;
   handleMattressSelection: (name: string) => void;
   mattressLabel: string;
   selectedMattress: string;
@@ -17,15 +18,12 @@ const ChooseMattressPresenter = (props: Props) => {
   const {
     getMattressPrice,
     getSelectedMattressPicture,
+    handleAddToCart,
     handleMattressSelection,
     mattressLabel,
     selectedMattress,
     selections,
   } = props;
-
-  const handleOnClick = () => {
-    console.log(`${selectedMattress} Mattress added to cart!`);
-  };
 
   return (
     <div>
@@ -44,7 +42,7 @@ const ChooseMattressPresenter = (props: Props) => {
           <div>{mattressLabel}</div>
           <div>{getMattressPrice()}</div>
         </div>
-        <Button onClick={handleOnClick} text={TEXT.ADD} />
+        <Button onClick={handleAddToCart} text={TEXT.ADD} />
       </div>
     </div>
   );

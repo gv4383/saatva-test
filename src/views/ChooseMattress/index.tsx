@@ -8,7 +8,12 @@ import zenPicture from '../../assets/zen-carousel.jpeg';
 import { MATTRESS_NAMES } from '../../constants';
 import { Mattress } from '../../types';
 
-const ChooseMattress = () => {
+interface Props {
+  handleAddToCart: () => void;
+}
+
+const ChooseMattress = (props: Props) => {
+  const { handleAddToCart } = props;
   const [mattresses, setMattresses] = useState([] as Mattress[]);
   const [selectedMattress, setSelectedMattress] = useState('Saatva Classic');
   const selections = mattresses.map((mattress: Mattress) => mattress.name);
@@ -58,6 +63,7 @@ const ChooseMattress = () => {
     <ChooseMattressPresenter
       getMattressPrice={getMattressPrice}
       getSelectedMattressPicture={getSelectedMattressPicture}
+      handleAddToCart={handleAddToCart}
       handleMattressSelection={handleMattressSelection}
       mattressLabel={mattressLabel}
       selectedMattress={selectedMattress}
