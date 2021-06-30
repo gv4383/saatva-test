@@ -1,5 +1,7 @@
 import React from 'react';
 
+import cartIcon from '../../assets/cart.svg';
+
 import './styles.scss';
 
 interface Props {
@@ -13,7 +15,10 @@ const Header = (props: Props) => {
     <header className="header-container">
       <div className="header-sub-container">
         <div className="header-logo">saatva</div>
-        <div className="header-cart">{cartCount}</div>
+        <div className="header-cart-container">
+          <div className="header-count">{cartCount}</div>
+          <img className="header-cart" src={cartIcon} alt="Shopping Cart" />
+        </div>
       </div>
     </header>
   );
