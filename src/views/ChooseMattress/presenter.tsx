@@ -4,6 +4,8 @@ import Button from '../../components/Input/Button';
 import { TEXT } from '../../constants';
 import SelectionBar from '../../components/Input/SelectionBar';
 
+import './styles.scss';
+
 interface Props {
   getMattressPrice: () => string;
   getSelectedMattressPicture: () => string;
@@ -26,11 +28,13 @@ const ChooseMattressPresenter = (props: Props) => {
   } = props;
 
   return (
-    <div>
-      <div>
-        <img src={getSelectedMattressPicture()} alt={selectedMattress} />
-      </div>
-      <div>
+    <div className="choose-container">
+      <img
+        className="choose-image-container"
+        src={getSelectedMattressPicture()}
+        alt={selectedMattress}
+      />
+      <div className="choose-selection-container">
         <div>{TEXT.TITLE}</div>
         <div>{TEXT.SELECT_MATTRESS}</div>
         <SelectionBar
