@@ -1,4 +1,4 @@
-# Saatva Hiring Test
+# Saatva Test
 
 This project was created using [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/). Though some argue that TypeScript is overkill in a small project like this, I like to argue that the tooling that comes with it is very valuable and can save some headaches with simple bugs in the long run.
 
