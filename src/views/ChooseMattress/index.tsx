@@ -18,6 +18,9 @@ const ChooseMattress = (props: Props) => {
   const [selectedMattress, setSelectedMattress] = useState('Saatva Classic');
   const selections = mattresses.map((mattress: Mattress) => mattress.name);
   const mattressLabel = `${selectedMattress} Mattress`;
+  const selectedMattressRating = mattresses.find(
+    (mattress: Mattress) => mattress.name === selectedMattress,
+  )?.reviewRating;
 
   useEffect(() => {
     axios
@@ -66,6 +69,7 @@ const ChooseMattress = (props: Props) => {
       handleAddToCart={handleAddToCart}
       handleMattressSelection={handleMattressSelection}
       mattressLabel={mattressLabel}
+      selectedMattressRating={selectedMattressRating}
       selectedMattress={selectedMattress}
       selections={selections}
     />

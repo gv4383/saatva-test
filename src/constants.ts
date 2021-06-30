@@ -9,3 +9,7 @@ export const TEXT = {
   SELECT_MATTRESS: 'SELECT MATTRESS TYPE',
   ADD: 'Add to Cart',
 };
+
+export const COLORS = {
+  GOLD: '#d5aa63',
+};

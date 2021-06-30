@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '../../components/Input/Button';
 import { TEXT } from '../../constants';
 import SelectionBar from '../../components/Input/SelectionBar';
+import StarRating from '../../components/StarRating';
 
 import './styles.scss';
 
@@ -13,6 +14,7 @@ interface Props {
   handleMattressSelection: (name: string) => void;
   mattressLabel: string;
   selectedMattress: string;
+  selectedMattressRating: number | undefined;
   selections: string[];
 }
 
@@ -24,6 +26,7 @@ const ChooseMattressPresenter = (props: Props) => {
     handleMattressSelection,
     mattressLabel,
     selectedMattress,
+    selectedMattressRating,
     selections,
   } = props;
 
@@ -46,6 +49,7 @@ const ChooseMattressPresenter = (props: Props) => {
           <div>{mattressLabel}</div>
           <div>{getMattressPrice()}</div>
         </div>
+        <StarRating rating={selectedMattressRating} />
         <Button onClick={handleAddToCart} text={TEXT.ADD} />
       </div>
     </div>
